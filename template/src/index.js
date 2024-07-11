@@ -3,9 +3,9 @@ import { toggleFavoriteStatus } from './events/favorites-events.js';
 import { q } from './events/helpers.js';
 import { loadPage, renderTrending } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
+import { uploadFile } from './events/upload-events.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  
   // add global listener
   document.addEventListener('click', e => {
 
@@ -37,6 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSearchItems(e.target.value);
   });
 
-  loadPage(HOME);
+  // upload events
+  document.getElementById('upload-button').addEventListener('click', () => {
+    uploadFile();
+  });
 
+  loadPage(HOME);
 });

@@ -1,14 +1,25 @@
-export const loadTrending = () => {
-  return fetch(`https://api.giphy.com/v1/gifs/trending?api_key=LalfqaRmzFmmEl9pwU3MVBly7y0ZZGT4&limit=25&rating=g`)
+import { API_KEY } from "../common/constants.js";
+
+export const loadTrending = async () => {
+  return await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=25&rating=g`)
     .then(response => response.json());
 };
 
-export const loadSingleGif = (id) => {
-  return fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=LalfqaRmzFmmEl9pwU3MVBly7y0ZZGT4`)
+export const loadSingleGif = async (id) => {
+  return await fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=${API_KEY}`)
       .then(response => response.json());
 };
 
-export const searchGifs = (searchTerm = '') => {
-  return fetch(`https://api.giphy.com/v1/gifs/search?api_key=LalfqaRmzFmmEl9pwU3MVBly7y0ZZGT4&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`)
+export const searchGifs = async (searchTerm = '') => {
+  return await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`)
       .then(response => response.json());
+};
+
+export const uploadGif = async (formData) => {
+  return await fetch('https://upload.giphy.com/v1/gifs', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .catch(error => console.error('Error uploading GIF:', error));
 };

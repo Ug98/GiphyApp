@@ -1,11 +1,12 @@
 import { loadTrending, loadSingleGif } from '../requests/request-service.js';
 import { toTrendingView } from '../views/trending-view.js';
+import { toUploadView } from '../views/upload-view.js';
 import { toFavoritesView } from '../views/favorites-view.js';
 import { toAboutView } from '../views/about-view.js';
 import { toHomeView } from '../views/home-view.js';
 import { q, setActiveNav } from './helpers.js';
 import { getFavorites } from '../data/favorites.js';
-import { CONTAINER_SELECTOR, HOME, TRENDING, FAVORITES, ABOUT } from '../common/constants.js';
+import { CONTAINER_SELECTOR, HOME, TRENDING, FAVORITES, ABOUT, UPLOAD } from '../common/constants.js';
 
 // public API
 export const loadPage = (page = '') => {
@@ -25,6 +26,10 @@ export const loadPage = (page = '') => {
         case ABOUT:
             setActiveNav(ABOUT);
             return renderAbout();
+        
+        case UPLOAD:
+            setActiveNav(UPLOAD);
+            return renderUpload();
 
         default:
             return null;
@@ -50,4 +55,8 @@ export const renderHome = () => {
 
 export const renderAbout = () => {
     q(CONTAINER_SELECTOR).innerHTML = toAboutView();
+};
+
+export const renderUpload = () => {
+    q(CONTAINER_SELECTOR).innerHTML = toUploadView();
 };
