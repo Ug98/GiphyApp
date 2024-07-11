@@ -18,7 +18,8 @@ export const searchGifs = async (searchTerm = '') => {
 export const uploadGif = async (formData) => {
   return await fetch('https://upload.giphy.com/v1/gifs', {
     method: 'POST',
-    body: formData
+    body: formData,
+    api_key: API_KEY,
   })
   .then(response => response.json())
   .catch(error => console.error('Error uploading GIF:', error));

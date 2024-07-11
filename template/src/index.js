@@ -38,9 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // upload events
-  document.getElementById('upload-button').addEventListener('click', () => {
-    uploadFile();
-  });
+  document.getElementById('upload-button').addEventListener('click', uploadFile());
 
   loadPage(HOME);
 });
