@@ -6,8 +6,19 @@ export const loadTrending = async () => {
 };
 
 export const loadSingleGif = async (id) => {
-  return await fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=${API_KEY}`)
-      .then(response => response.json());
+  try {
+    console.log('Fetching single gif with ID:', id); // Log the ID being fetched
+    const response = await fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=${API_KEY}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const gifData = await response.json();
+    console.log('Fetched gif data:', gifData); // Log the fetched GIF data
+    return gifData;
+  } catch (error) {
+    console.error('Error fetching single gif:', error.message);
+    throw error;
+  }
 };
 
 export const searchGifs = async (searchTerm = '') => {
@@ -16,11 +27,14 @@ export const searchGifs = async (searchTerm = '') => {
 };
 
 export const uploadGif = async (formData) => {
+  // try {
   return await fetch('https://upload.giphy.com/v1/gifs', {
     method: 'POST',
-    body: formData,
-    api_key: API_KEY,
+    body: formData
   })
   .then(response => response.json())
-  .catch(error => console.error('Error uploading GIF:', error));
+  .catch(error => {
+    console.error('Error fetching upload API:', error.message);
+    alert('Error fetching upload API:', error.message);
+  })
 };

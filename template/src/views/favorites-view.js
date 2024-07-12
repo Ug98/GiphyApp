@@ -4,3 +4,4 @@ export const toFavoritesView = (gifs) => `
 ${gifs.map(gif => `<div class="grid-item"><img src="${gif.images}"></div>`).join(`\n`)}
 </div>
 `;
+

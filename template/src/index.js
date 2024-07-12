@@ -4,6 +4,7 @@ import { q } from './events/helpers.js';
 import { loadPage, renderTrending } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
 import { uploadFile } from './events/upload-events.js';
+import { renderFavoriteStatus } from './events/helpers.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // add global listener
@@ -26,10 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
 
     // toggle favorite event
-    if (e.target.classList.contains('trending')) {
-      toggleFavoriteStatus(+e.target.getAttribute('data-trending-id'));
+    if (e.target.classList.contains('favorite')) {
+      const gifId = e.target.getAttribute('data-favorite-id');
+      toggleFavoriteStatus(gifId);
+      e.target.innerHTML = renderFavoriteStatus(gifId);
     }
 
+    // upload events
+    if (e.target.id === 'upload-button') {
+      uploadFile();
+    }
   });
 
   // search events
@@ -38,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // upload events
-  document.getElementById('upload-button').addEventListener('click', uploadFile());
+  // q('#upload-button').addEventListener('click', uploadFile());
 
   loadPage(HOME);
 });
