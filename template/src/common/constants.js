@@ -10,8 +10,8 @@ export const ABOUT = 'about';
 
 export const CONTAINER_SELECTOR = '#container';
 
-export const FULL_HEART = '❤';
+export const FULL_HEART = '❤️';
 
-export const EMPTY_HEART = '♡';
+export const EMPTY_HEART = '🤍';
 
-export const API_KEY = 'eo3vADwsBvwoufmPCcc4LkIr9QNW5daJ';
+export const API_KEY = 'FdyX768rBJ0XQ4jcT7uG20AqVl0UOmx8';
