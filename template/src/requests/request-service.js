@@ -34,7 +34,7 @@ export const uploadGif = async (formData) => {
     alert('Error fetching upload API:', error.message);
   })
 };
-export const loadRandomGifs = async (limit = 5) => {
+export const loadRandomGifs = async (limit = 1) => {
   const randomGifPromises = Array.from({ length: limit }, () =>
     fetch(`https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&rating=g`).then(response => response.json())
   );
