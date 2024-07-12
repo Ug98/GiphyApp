@@ -1,7 +1,7 @@
-import { loadTrending, loadSingleGif } from '../requests/request-service.js';
+import { loadTrending, loadSingleGif, loadRandomGifs } from '../requests/request-service.js';
 import { toTrendingView } from '../views/trending-view.js';
 import { toUploadView } from '../views/upload-view.js';
-import { toFavoritesView } from '../views/favorites-view.js';
+import { toFavoritesView, toRandomGifsView } from '../views/favorites-view.js';
 import { toAboutView } from '../views/about-view.js';
 import { toHomeView } from '../views/home-view.js';
 import { q, setActiveNav } from './helpers.js';
@@ -38,9 +38,13 @@ export const loadPage = (page = '') => {
 
 export const renderFavorites = async () => {
     const favoriteGifs = getFavorites();
-    q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favoriteGifs);
-  };
-  
+    if (favoriteGifs.length === 0) {
+        const randomGifs = await loadRandomGifs(5); // Fetch 5 random GIFs
+        q(CONTAINER_SELECTOR).innerHTML = toRandomGifsView(randomGifs);
+    } else {
+        q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favoriteGifs);
+    }
+};
 
 export const renderTrending = () => {
     loadTrending()

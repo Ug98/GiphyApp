@@ -19,7 +19,6 @@ export const toggleFavoriteStatus = async (gifId) => {
       button.classList.remove('remove-from-favorites');
       button.classList.add('add-to-favorites');
     }
-    // Check if the current page is the favorites page
     const favoritesNavLink = document.querySelector('a.nav-link[data-page="favorites"]');
     if (favoritesNavLink && favoritesNavLink.classList.contains('active')) {
       renderFavorites();
