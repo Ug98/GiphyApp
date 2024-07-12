@@ -6,9 +6,9 @@ import { renderSearchItems } from './events/search-events.js';
 import { uploadFile } from './events/upload-events.js';
 import { renderFavoriteStatus } from './events/helpers.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   // add global listener
-  document.addEventListener('click', e => {
+  document.addEventListener('click', async e => {
 
     // nav events
     if (e.target.classList.contains('nav-link')) {
@@ -27,12 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
 
     // toggle favorite event
-    if (e.target.classList.contains('favorite')) {
-      const gifId = e.target.getAttribute('data-favorite-id');
-      toggleFavoriteStatus(gifId);
-      e.target.innerHTML = renderFavoriteStatus(gifId);
+    if (e.target.classList.contains('add-to-favorites') || e.target.classList.contains('remove-from-favorites')) {
+      const gifId = e.target.getAttribute('data-gif-id');
+      if (gifId) {
+        await toggleFavoriteStatus(gifId);
+      } else {
+        console.error('GIF ID is undefined:', e.target);
+      }
     }
-
     // upload events
     if (e.target.id === 'upload-button') {
       uploadFile();

@@ -1,7 +1,22 @@
-export const toFavoritesView = (gifs) => `
-  <h1>Favorite gifs:</h1>
-<div id="trending">
-${gifs.map(gif => `<div class="grid-item"><img src="${gif.images}"></div>`).join(`\n`)}
-</div>
-`;
 
+export const toFavoritesView = (favorites) => {
+ 
+
+  if (favorites.length === 0) {
+    return '<h1>No favorites yet</h1>'
+  } else {
+    return `
+    <h1>Favorite gifs:</h1>
+    <div id="favorites">
+      ${favorites.map(gif => {
+      return `
+          <div class="grid-item" data-key="${gif.id}">
+            <img src="${gif.images?.downsized_medium.url}" alt="GIF">
+            <button class="remove-from-favorites" data-gif-id="${gif.id}">Remove</button>
+          </div>`;
+    }).join('\n')}
+    </div>
+  `;
+
+  }
+};

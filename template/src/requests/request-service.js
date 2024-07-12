@@ -7,19 +7,15 @@ export const loadTrending = async () => {
 
 export const loadSingleGif = async (id) => {
   try {
-    console.log('Fetching single gif with ID:', id); // Log the ID being fetched
     const response = await fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=${API_KEY}`);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const gifData = await response.json();
-    console.log('Fetched gif data:', gifData); // Log the fetched GIF data
-    return gifData;
+    const data = await response.json();
+    return data.data;
   } catch (error) {
-    console.error('Error fetching single gif:', error.message);
-    throw error;
+    console.error('Error loading single GIF:', error);
+    return null;
   }
 };
+
 
 export const searchGifs = async (searchTerm = '') => {
   return await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`)

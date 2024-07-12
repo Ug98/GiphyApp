@@ -1,4 +1,4 @@
-import { FULL_HEART } from "../common/constants.js";
+import { EMPTY_HEART } from "../common/constants.js";
 
 export const toTrendingView = (gifs) => `
   <h1>Trending</h1>
@@ -7,7 +7,7 @@ export const toTrendingView = (gifs) => `
       <div class="grid-item">
         <img src="${gif.images.downsized_medium.url}" alt="${gif.title}">
         <button class="view-trending-btn" data-trending-id="${gif.id}">View info</button>
-        <span class="trending" data-trending-id="${gif.id}">${FULL_HEART}</span>
+        <button class="add-to-favorites" data-gif-id="${gif.id}">${EMPTY_HEART}</button>
       </div>
     `).join('\n')}
   </div>

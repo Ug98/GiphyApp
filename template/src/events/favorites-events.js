@@ -1,15 +1,22 @@
 import { addFavorite, getFavorites, removeFavorite } from '../data/favorites.js';
-import { q, renderFavoriteStatus } from './helpers.js';
-
-
+import { loadSingleGif } from '../requests/request-service.js';
 export const toggleFavoriteStatus = async (gifId) => {
-  const favorites = getFavorites();
-
-  if (favorites.includes(gifId)) {
-    removeFavorite(gifId);
-  } else {
-    addFavorite(gifId);
+  if (!gifId) {
+    console.error('Invalid GIF ID:', gifId);
+    return;
   }
 
-  q(`span[data-favorite-id="${gifId}"]`).innerHTML = await renderFavoriteStatus(gifId);
+  let favorites = getFavorites();
+
+  if (favorites.find(fav => fav.id === gifId)) {
+    removeFavorite(gifId);
+  } else {
+    const gif = await loadSingleGif(gifId);
+    if (gif && gif.images && gif.images.downsized_medium && gif.images.downsized_medium.url) {
+      addFavorite(gif);
+    } else {
+      console.error('Invalid GIF object:', gif);
+    }
+  }
+
 };

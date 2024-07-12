@@ -37,18 +37,10 @@ export const loadPage = (page = '') => {
 };
 
 export const renderFavorites = async () => {
-    const favorites = await getFavorites();
-    if (favorites.length === 0) {
-        q(CONTAINER_SELECTOR).innerHTML = `<h1>No favorite gifs yet.</h1>`;
-        return;
-    }
-    Promise.all(favorites.map(id => loadSingleGif(id)))
-        .then(favoriteGifs => q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favoriteGifs))
-        .catch(error => {
-            console.error('Error loading favorite gifs:', error.message);
-            alert('Error loading favorite gifs:', error.message);
-        });
-};
+    const favoriteGifs = getFavorites();
+    q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favoriteGifs);
+  };
+  
 
 export const renderTrending = () => {
     loadTrending()
