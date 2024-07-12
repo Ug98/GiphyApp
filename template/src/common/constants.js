@@ -14,4 +14,4 @@ export const FULL_HEART = '❤';
 
 export const EMPTY_HEART = '♡';
 
-export const API_KEY = 'yNA4i2waw3w9Y3iLilMPMcNbXxHvjXxO';
+export const API_KEY = 'eo3vADwsBvwoufmPCcc4LkIr9QNW5daJ';
