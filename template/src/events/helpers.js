@@ -19,7 +19,7 @@ export const setActiveNav = (page) => {
 
 export const renderFavoriteStatus = (gifId) => {
   const favorites = getFavorites();
-  return favorites.includes(gifId)
-    ? `<span class="favorite active" data-favorite-id="${gifId}">${FULL_HEART}</span>`
-    : `<span class="favorite" data-favorite-id="${gifId}">${EMPTY_HEART}</span>`;
+  return favorites.find(fav => fav.id === gifId)
+    ? FULL_HEART
+    : EMPTY_HEART;
 };
