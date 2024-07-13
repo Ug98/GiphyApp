@@ -15,6 +15,7 @@ export const toFavoritesView = (favorites) => {
           <div class="grid-item gif-container" data-key="${gif.id}">
             <img src="${gif.images?.downsized_medium.url}" alt="GIF">
             <p>${gif.title}</p>
+            <button class="view-trending-btn" data-trending-id="${gif.id}">View info</button>
             <button class="remove-from-favorites" data-gif-id="${gif.id}">${FULL_HEART}</button>
           </div>`;
     }).join('\n')}
