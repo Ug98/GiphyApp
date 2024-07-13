@@ -9,10 +9,10 @@ export const toFavoritesView = (favorites) => {
   } else {
     return `
     <h1>Favorite gifs:</h1>
-    <div id="favorites">
+    <div class="trending">
       ${favorites.map(gif => {
       return `
-          <div class="grid-item" data-key="${gif.id}">
+          <div class="grid-item gif-container" data-key="${gif.id}">
             <img src="${gif.images?.downsized_medium.url}" alt="GIF">
             <p>${gif.title}</p>
             <button class="remove-from-favorites" data-gif-id="${gif.id}">${FULL_HEART}</button>
