@@ -4,9 +4,27 @@ html, body {
   margin: 0;
 }
 
-body {
+/* body {
   background: url('../images/dark-linen.png') repeat;
   font-family: 'Roboto', sans-serif;
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: url('../src/data/images/tumblr_9056eaadcd5ebc44d1ee74c678bf50dc_13960827_400.gif') repeat;
+  background-size: auto 50%; /* Adjust this based on the actual size of your GIF */
+}
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%; /* Three times the width of the original GIF */
+  height: 300%;
+  background: url('../src/data/images/tumblr_9056eaadcd5ebc44d1ee74c678bf50dc_13960827_400.gif') repeat;
+  background-size: contain;
 }
 
 div#app {
@@ -26,14 +44,14 @@ div#app {
 
 header {
   grid-area: header;
-  height: 200px;
-  background: url('../images/banner-top.png');
+  height: 100px;
+  /* background: url('../images/banner-top.png'); */
 }
 
 nav {
   grid-area: menu;
   height: 60px;
-  background: url('../images//banner-bottom.png');
+  /* background: url('../images//banner-bottom.png'); */
   font-size: 1.75em;
   line-height: 60px;
   padding: 20px;
@@ -314,7 +332,7 @@ div.movie-detailed div.movie-info {
 }
 
 .nav-link img {
-  width: 100px; /* Adjust size as needed */
+  width: auto; /* Adjust size as needed */
   height: auto;
   cursor: pointer;
   pointer-events: none;
