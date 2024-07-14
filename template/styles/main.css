@@ -13,7 +13,9 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background: url('../src/data/images/backgroundCool.gif');
+  background:
+  url('../src/data/images/dark theme overlay.png'),
+  url('../src/data/images/dark theme.gif');
   background-size: auto;
 }
 
@@ -23,7 +25,9 @@ body {
   left: 0;
   width: 300%; /* Three times the width of the original GIF */
   height: 300%;
-  background: url('../src/data/images/backgroundCool.gif');
+  /* background:
+  url('../src/data/images/light theme overlay.png'),
+  url('../src/data/images/light theme.gif'); */
   background-size: contain;
 }
 
@@ -58,8 +62,7 @@ nav {
 }
 
 nav a {
-  margin-left: 95px;
-  margin-right: 95px;
+  margin: 37px;
 }
 
 nav a:hover {
@@ -196,16 +199,20 @@ span.favorite:hover {
 }
 
 .nav-link img {
-  width: 125px; /* Adjust size as needed */
+  width: 200px; /* Adjust size as needed */
   height: auto;
   cursor: pointer;
   pointer-events: none;
   z-index: 1; /* Ensure the GIF is below the overlay */
 }
 
-.nav-link img:hover {
-  opacity: 0.3; /* Slightly reduces opacity on hover */
+.nav-link img#upload-icon {
+scale: 0.8
 }
+
+/* .nav-link img:hover {
+  opacity: 0.3; /* Slightly reduces opacity on hover 
+} */
 
 /* End about styles */
 
