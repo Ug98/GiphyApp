@@ -61,8 +61,8 @@ nav {
 }
 
 nav a {
-  margin-left: 120px;
-  margin-right: 120px;
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 nav a:hover {
@@ -165,7 +165,7 @@ span.favorite:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,7 +173,7 @@ span.favorite:hover {
 }
 
 .gif-details {
-  background-color: whitesmoke;
+  background-color: rgb(212, 212, 212);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -194,7 +194,7 @@ span.favorite:hover {
 }
 
 .nav-link img {
-  width: 75px; /* Adjust size as needed */
+  width: 155px; /* Adjust size as needed */
   height: auto;
   cursor: pointer;
   pointer-events: none;
@@ -225,7 +225,7 @@ span.favorite:hover {
 .nav-link input {
   position: absolute;
   top: 0;
-  left: 75%;
+  left: 50%;
   transform: translate(-50%, -50%);
   display: none;
   z-index: 3; /* Ensure the input is above the overlay */
@@ -236,26 +236,35 @@ span.favorite:hover {
   display: block;
 }
 
-#container > .trending {
-  display: grid;
-  grid-template-columns: repeat(5, auto); /* 5 columns with auto width */
-  grid-gap: 5px; /* Gap between grid items */
+#random-gifs > .grid-item > .gif-container {
+  max-width: 400px;
+}
+
+#container {
+  padding: 20px;
+}
+
+.trending {
+  column-count: 5; 
+  column-gap: 5px; 
 }
 
 .grid-item {
-  display: flex;
-  flex-direction: column; /* Arrange gif-containers in a column */
+  display: inline-block;
+  margin: 0;
+  width: 100%;
 }
 
 .gif-container {
   position: relative;
-  margin-bottom: 5px; /* Ensure small space between gif-containers */
+  width: 100%;
+  margin-bottom: 5px;
 }
 
 .gif-container img {
-  display: block; /* Remove inline space */
-  width: 100%; /* Ensure gif fits within container width */
-  height: auto; /* Maintain original height */
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .gif-container .overlay {
@@ -264,9 +273,9 @@ span.favorite:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5); /* Adjust overlay color and opacity */
-  display: none; /* Initially hidden */
-  z-index: 1; /* Ensure the overlay is above the image */
+  background-color: rgba(255, 255, 255, 0.5);
+  display: none;
+  z-index: 1;
 }
 
 .gif-container .buttons {
@@ -274,13 +283,15 @@ span.favorite:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: none; /* Initially hidden */
-  z-index: 2; /* Ensure the buttons are above the overlay */
+  display: none;
+  z-index: 2;
 }
 
 .gif-container:hover .overlay,
 .gif-container:hover .buttons {
-  display: block; /* Show the overlay and buttons on hover */
+  display: block;
 }
 
-
+#upload {
+  padding-top: 50px;
+}
