@@ -13,8 +13,8 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background: url('../src/data/images/tumblr_9056eaadcd5ebc44d1ee74c678bf50dc_13960827_400.gif') repeat;
-  background-size: auto 50%; /* Adjust this based on the actual size of your GIF */
+  background: url('../src/data/images/backgroundCool.gif');
+  background-size: auto;
 }
 
 .background-container {
@@ -23,7 +23,7 @@ body {
   left: 0;
   width: 300%; /* Three times the width of the original GIF */
   height: 300%;
-  background: url('../src/data/images/tumblr_9056eaadcd5ebc44d1ee74c678bf50dc_13960827_400.gif') repeat;
+  background: url('../src/data/images/backgroundCool.gif');
   background-size: contain;
 }
 
@@ -50,19 +50,16 @@ header {
 
 nav {
   grid-area: menu;
-  height: 60px;
-  /* background: url('../images//banner-bottom.png'); */
-  font-size: 1.75em;
+  height: 180px;
   line-height: 60px;
-  color: white;
   display: flex;
   justify-content: center; /* Center items horizontally */
   align-items: center; /* Center items vertically */
 }
 
 nav a {
-  margin-left: 70px;
-  margin-right: 70px;
+  margin-left: 95px;
+  margin-right: 95px;
 }
 
 nav a:hover {
@@ -71,9 +68,14 @@ nav a:hover {
 
 #container {
   grid-area: container;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
+  background-color: rgba(0, 0, 0, 0);
   color: white;
+}
+
+#container h1 {
+  text-align: center;
+  font-family: cursive;
+  color:wheat
 }
 
 footer {
@@ -194,7 +196,7 @@ span.favorite:hover {
 }
 
 .nav-link img {
-  width: 155px; /* Adjust size as needed */
+  width: 125px; /* Adjust size as needed */
   height: auto;
   cursor: pointer;
   pointer-events: none;
@@ -224,7 +226,7 @@ span.favorite:hover {
 
 .nav-link input {
   position: absolute;
-  top: 0;
+  top: 95%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
@@ -293,5 +295,5 @@ span.favorite:hover {
 }
 
 #upload {
-  padding-top: 50px;
+  padding-top: 30px;
 }
