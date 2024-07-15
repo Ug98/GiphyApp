@@ -17,6 +17,7 @@ body {
   url('../src/data/images/dark theme overlay.png'),
   url('../src/data/images/dark theme.gif');
   background-size: auto;
+  font-family: 'Helvetica', sans-serif;
 }
 
 .background-container {
@@ -63,11 +64,12 @@ nav {
 
 nav a {
   margin: 37px;
+  text-decoration: none;
 }
 
-nav a:hover {
+/* nav a:hover {
   color: rgb(198, 115, 247);
-}
+} */
 
 #container {
   grid-area: container;
@@ -77,8 +79,9 @@ nav a:hover {
 
 #container h1 {
   text-align: center;
-  font-family: cursive;
-  color:wheat
+  font-family: Helvetica, sans-serif;
+  color:rgba(70, 74, 103);
+  font-size: 50px;
 }
 
 footer {
@@ -98,14 +101,15 @@ a.active {
 }
 
 input#search {
-  font-size: 20px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  border: 1px solid gray;
-  border-radius: 4px;
-  height: 24px;
+  font-size: 21px;
+  background-color: transparent;
+  color: rgb(188, 228, 244);
+  border: 3px inset rgb(33, 35, 49);
+  /* border-radius: 4px; */
+  height: 42px;
   flex: 1 0;
   margin: auto;
+  text-align: center;
 }
 
 span.favorite {
@@ -219,6 +223,7 @@ scale: 0.8
 .nav-link {
   position: relative;
   display: inline-block;
+  text-align: center;
 }
 
 
@@ -282,7 +287,7 @@ scale: 0.8
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(33, 35, 49, 0.85);
   display: none;
   z-index: 1;
 }
@@ -310,3 +315,18 @@ scale: 0.8
   background: transparent;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+  padding: 1rem;
+}
+
+.nav-text {
+  display: block;
+  font-size: 36px;
+  margin-top: -20px;
+  font-style: Helvetica, sans-serif;
+  text-align: center;
+  text-underline-offset: none;
+}

@@ -10,6 +10,13 @@ import { CONTAINER_SELECTOR, HOME, TRENDING, FAVORITES, ABOUT, UPLOAD } from '..
 
 // public API
 export const loadPage = (page = '') => {
+
+    q('#trending-text').style.color = 'transparent';
+    q('#favorites-text').style.color = 'transparent';
+    q('#search-text').style.color = 'transparent';
+    q('#upload-text').style.color = 'transparent';
+    q('#about-text').style.color = 'transparent';
+
     switch (page) {
         case HOME:
             setActiveNav(HOME);
@@ -39,27 +46,33 @@ export const loadPage = (page = '') => {
 export const renderFavorites = async () => {
     const favoriteGifs = getFavorites();
     if (favoriteGifs.length === 0) {
-        const randomGifs = await loadRandomGifs(); // Fetch 5 random GIFs
+        const randomGifs = await loadRandomGifs(); // Fetch a random GIF
         q(CONTAINER_SELECTOR).innerHTML = toRandomGifsView(randomGifs);
     } else {
         q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favoriteGifs);
     }
+    q('#favorites-text').style.color = 'rgba(70, 74, 103)';
 };
 
-export const renderTrending = () => {
+export const renderTrending = async () => {
     loadTrending()
         .then(trendingGifs => q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGifs))
         .catch(error => console.error(error.message));
+    q('#trending-text').style.color = 'rgba(70, 74, 103)';
 };
 
-export const renderHome = () => {
-    q(CONTAINER_SELECTOR).innerHTML = toHomeView();
-};
+// export const renderHome = () => {
+//     q(CONTAINER_SELECTOR).innerHTML = toHomeView();
+//     q('.nav-text').forEach(text => text.style.display = 'none');
+//     q('#favorites-text').style.display = 'block';
+// };
 
-export const renderAbout = () => {
+export const renderAbout = async () => {
     q(CONTAINER_SELECTOR).innerHTML = toAboutView();
+    q('#about-text').style.color = 'rgba(70, 74, 103)';
 };
 
-export const renderUpload = () => {
+export const renderUpload = async () => {
     q(CONTAINER_SELECTOR).innerHTML = toUploadView();
-};
+    q('#upload-text').style.color = 'rgba(70, 74, 103)';
+ };

@@ -2,7 +2,7 @@ import { renderFavoriteStatus } from "../events/helpers.js";
 import { FULL_HEART } from "../common/constants.js";
 
 export const toTrendingView = (gifs) => `
-  <h1>Trending</h1>
+  <h1></h1>
   <div class="trending">
     ${gifs.data.map(gif => `
       <div class="grid-item">

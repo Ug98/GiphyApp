@@ -3,10 +3,10 @@ import { renderFavoriteStatus } from "../events/helpers.js";
 
 export const toFavoritesView = (favorites) => {
   if (favorites.length === 0) {
-    return '<h1>No favorites yet</h1>';
+    return' <h1>No favorites yet</h1>';
   } else {
     return `
-      <h1>Favorite gifs:</h1>
+      <h1></h1>
       <div class="trending">
         ${favorites.map(gif => `
           <div class="grid-item">
