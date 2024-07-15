@@ -60,12 +60,87 @@ nav {
   display: flex;
   justify-content: center; 
   align-items: center; 
+  margin-left: 900px;
 }
 
-nav a {
-  margin: 37px;
-  text-decoration: none;
+nav > a {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
+
+/* nav > a:hover {
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+} */
+
+.site-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 135px;
+  margin: 0; /* Remove default margin */
+  border-radius: 10px;
+  background: #333;
+  border: 3px solid #222234;
+  position: absolute; /* Allows precise positioning */
+  top: 100px; /* Adjust this value to move down */
+  left: 267px; /* Adjust this value to move right */
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+/* Pseudo-element for the animated effect */
+.site-name::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, #222234, #ac1c1c);
+  transform: rotate(50deg);
+  transition: all 0.5s ease;
+}
+
+/* Clip-path effect on hover */
+.site-name:hover::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0);
+  transition: all 0.5s ease;
+}
+
+/* Styling the text inside the box */
+.site-name h3 {
+  font-family: 'Courier New', monospace;
+  font-size: 38px;
+  color: white;
+  text-shadow: 25px 25px 25px;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+/* Specific styling for the middle letters */
+.middle-letters {
+  color: #e5ff00;
+  filter: drop-shadow(0 0 6px #e5ff00);
+  font-size: 45px;
+  margin: 0 5px;
+}
+
+
+/* Changing background on hover */
+.site-name:hover {
+  background: #1a1a1a;
+}
+
+
 
 /* nav a:hover {
   color: rgb(198, 115, 247);
@@ -101,13 +176,12 @@ a.active {
 }
 
 input#search {
-  font-size: 21px;
+  font-size: 20px;
   background-color: transparent;
-  color: rgb(188, 228, 244);
-  border: 3px inset rgb(33, 35, 49);
+  color: white;
+  border: 3px inset white;
   height: 36px;
   flex: 1 0;
-  margin-top: -16px;
   text-align: center;
   align-items: center;  
 }
@@ -196,7 +270,7 @@ span.favorite:hover {
 }
 
 .nav-link img {
-  width: 150px; /* Adjust size as needed */
+  width: 75px; /* Adjust size as needed */
   height: auto;
   cursor: pointer;
   pointer-events: none;
@@ -243,6 +317,7 @@ scale: 0.8
   display: block;
 }
 
+
 #random-gifs > .grid-item > .gif-container {
   max-width: 400px;
   margin-top: 35px;
@@ -281,14 +356,14 @@ scale: 0.8
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(70, 74, 103, 0.85);
+  background-color: rgba(255, 255, 255, 0.2);
   display: none;
   z-index: 1;
 }
 
 .gif-container .buttons {
   position: absolute;
-  top: 50%;
+  top: 86%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
@@ -301,38 +376,131 @@ scale: 0.8
   display: block;
 }
 
-#upload {
-  padding-top: 30px;
-}
-
 .gif-container > .buttons > button {
-  border: none;
-  background: transparent;
-  color: white;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-around;
-  background-color: #333;
-  padding: 1rem;
-}
-
-.nav-text {
-  display: block;
-  font-size: 36px;
-  margin-top: -20px;
-  font-style: Helvetica, sans-serif;
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: 15px;
+  font-weight: bold;
   text-align: center;
-  text-underline-offset: none;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(to right, #ac1c1c, #222234);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.gif-container > .buttons > button:hover {
+  background: linear-gradient(0deg,  #63386b, #ac1c1c);
+  transform: scale(0.9);
 }
 
-h2 {
-  color: rgb(70, 74, 103);
+#uploads {
+  display: grid;
+  grid-template-columns: 1.7fr 3fr;
+  gap: 120px;
+  margin-top: 20px;
+  align-items: start; /* Подравняване на елементите от горе надолу */
 }
 
-h3{
-  font-size: xx-large;
-  margin-left: 100px;
-  color: wheat;
+
+#upload {
+  grid-column: 1; /* Заема първата колона на грида */
+  background: linear-gradient(45deg, #4a4a4a, #2a2a2a); /* Градиентен цвят на фона */
+  border-radius: 15px; /* Закръгляне на ръбовете */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* По-дълбока сянка за 3D ефект */
+  text-align: center; /* Центриран текст */
+  padding: 30px; /* Падинг за по-добър вид */
+  max-width: 400px; /* Максимална ширина на кутията */
+  position: relative; /* Необходимо за позициониране на елементи върху бекграунда */
+  overflow: hidden; /* Скрива ненужните елементи */
+  
 }
+
+#upload p {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff; /* Цвят на текста */
+  margin-bottom: 20px;
+}
+
+#upload-gif {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  font-size: 18px;
+  width: calc(100% - 30px); /* Ширина на полето за качване, извадена от padding и border */
+  background-color: rgba(255, 255, 255, 0.1); /* Прозрачен фон */
+  color: #fff; /* Цвят на текста */
+}
+
+#upload-button {
+  background-color: #ac1c1c; /* Основен цвят на бутона */
+  color: white; /* Цвят на текста на бутона */
+  padding: 15px 30px; /* По-голямо padding за по-голям бутон */
+  border: none; /* Без граници */
+  border-radius: 10px; /* Закръгляне на ръбовете */
+  cursor: pointer; /* Показване на курсора */
+  font-size: 18px; /* Големина на шрифта */
+  transition: background-color 0.3s ease; /* Плавна анимация на цвета на фона */
+  width: calc(100% - 30px); /* Ширина на бутона, извадена от padding и border */
+  position: relative; /* Необходимо за позициониране на елементи върху бекграунда */
+  z-index: 1; /* Необходимо за прозрачността на бекграунда */
+}
+
+#upload-button:hover {
+  background-color: #8c1010; /* Цвят на фона при ховър */
+}
+
+#upload-button:active {
+  background-color: #750d0d; /* Цвят на фона при активно натискане */
+}
+
+#uploaded {
+  grid-column: 2; /* Заета втора колона на грида */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Гъвкава сетка с минимален размер от 150px */
+  gap: 20px; /* Разстояние между елементите */
+  align-items: start; /* Подравняване на елементите от горе надолу */
+  justify-items: center; /* Центриране на съдържанието по хоризонталата */
+}
+
+#uploaded p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  grid-column: 1 / -1; /* Заета цялата ширина на грида */
+}
+
+
+#uploaded .grid-item {
+  width: 100%;
+  max-width: 300px; /* Максимална ширина на елемента */
+}
+
+#uploaded .grid-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+#uploads p {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    text-align: center;
+    color: #ffffff; /* бяло */
+    background-image: linear-gradient(to right, #b33939, #757575); /* червено-сив градиент */
+    padding: 20px;
+    border-radius: 20px;
+}
+  
+
+  
+  
+  
+  
+  
+  
+  
