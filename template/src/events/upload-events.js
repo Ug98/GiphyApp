@@ -7,10 +7,13 @@ import { addUpload, getUploads } from '../data/uploads.js';
 export const uploadFile = async () => {
   const fileInput = q('#upload-gif');
   const formData = new FormData();
+  const loadingElement = q('#loading');
 
   formData.append('file', fileInput.files[0]);
   formData.append('api_key', API_KEY);
 
+  loadingElement.style.display = 'block';
+  
   try {
     const data = await uploadGif(formData);
     if (data.meta.status === 200) {
@@ -24,6 +27,8 @@ export const uploadFile = async () => {
   } catch (error) {
     console.error('Error uploading GIF:', error.message);
     alert('Error uploading GIF:', error.message);
+  } finally {
+    loadingElement.style.display = 'none';
   }
 };
 

@@ -496,11 +496,24 @@ scale: 0.8
     border-radius: 20px;
 }
   
-
+.nav-text {
+  display: block;
+  font-size: 15px;
+  margin-top: -20px;
+  font-style: Helvetica, sans-serif;
+}
   
+#loading {
+  display: none; 
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; 
+}
   
-  
-  
-  
-  
+#loading img {
+  width: 250px; 
+  height: 200px; 
+}
   
