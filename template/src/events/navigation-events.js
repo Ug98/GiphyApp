@@ -74,5 +74,5 @@ export const renderAbout = async () => {
 
 export const renderUpload = async () => {
     q(CONTAINER_SELECTOR).innerHTML = toUploadView();
-    q('#upload-text').style.color = 'rgba(70, 74, 103)';
+    q('#upload-text').style.color = 'rgba(254, 55, 68)';
  };

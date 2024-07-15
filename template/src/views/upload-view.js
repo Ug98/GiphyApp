@@ -6,7 +6,6 @@ export const toUploadView = () => `
   <button id="upload-button">Upload GIF</button>
 </div>
 <div id="uploaded">
-  <p>Uploaded</p>
   ${getUploads().map(gifId => `<div class="grid-item"><img src="https://media.giphy.com/media/${gifId}/giphy.gif"></div>`).join(`\n`)}
 </div>
 `;
