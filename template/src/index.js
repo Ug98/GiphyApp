@@ -1,4 +1,4 @@
-import { HOME } from './common/constants.js';
+import { TRENDING } from './common/constants.js';
 import { toggleFavoriteStatus } from './events/favorites-events.js';
 import { q } from './events/helpers.js';
 import { loadPage, renderTrending } from './events/navigation-events.js';
@@ -54,5 +54,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderSearchItems(e.target.value);
   });
 
-  loadPage(HOME);
+  loadPage(TRENDING);
 });
