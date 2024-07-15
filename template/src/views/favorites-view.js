@@ -26,8 +26,7 @@ export const toFavoritesView = (favorites) => {
 };
 
 export const toRandomGifsView = (gifs) => `
-  <h1>Random gifs:</h1>
-  <div id="random-gifs">
+  <div id="random-gifs" align="center">
     ${gifs.map(gif => `
       <div class="grid-item">
         <div class="gif-container">
@@ -38,6 +37,7 @@ export const toRandomGifsView = (gifs) => `
             <button class="${renderFavoriteStatus(gif.id) === FULL_HEART ? 'remove-from-favorites' : 'add-to-favorites'}" data-gif-id="${gif.id}">${renderFavoriteStatus(gif.id)}</button>
           </div>
         </div>
+        <h2>Could it be your first favorite GIF?</h2>
       </div>
     `).join('\n')}
   </div>
