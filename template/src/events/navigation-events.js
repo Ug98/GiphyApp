@@ -46,7 +46,7 @@ export const loadPage = (page = '') => {
 export const renderFavorites = async () => {
     const favoriteGifs = getFavorites();
     if (favoriteGifs.length === 0) {
-        const randomGifs = await loadRandomGifs(); // Fetch a random GIF
+        const randomGifs = await loadRandomGifs(); 
         q(CONTAINER_SELECTOR).innerHTML = toRandomGifsView(randomGifs);
     } else {
         q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favoriteGifs);

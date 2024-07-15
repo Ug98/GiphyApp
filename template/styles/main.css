@@ -24,7 +24,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 300%; /* Three times the width of the original GIF */
+  width: 300%; 
   height: 300%;
   /* background:
   url('../src/data/images/light theme overlay.png'),
@@ -58,8 +58,8 @@ nav {
   height: 180px;
   line-height: 60px;
   display: flex;
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
+  justify-content: center; 
+  align-items: center; 
 }
 
 nav a {
@@ -105,7 +105,6 @@ input#search {
   background-color: transparent;
   color: rgb(188, 228, 244);
   border: 3px inset rgb(33, 35, 49);
-  /* border-radius: 4px; */
   height: 36px;
   flex: 1 0;
   margin-top: -16px;
@@ -131,14 +130,6 @@ span.favorite:hover {
   color:rgb(187, 135, 255)
 }
 
-/* End template styling */
-
-
-
-/* Add your styles below */
-
-
-/* Homepage styles */
 
 
 #home {
@@ -155,10 +146,6 @@ span.favorite:hover {
   font-size: 1.5em;
 }
 
-/* End homepage styles */
-
-
-/* About styles */
 
 #about {
   padding: 50px;
@@ -239,7 +226,7 @@ scale: 0.8
   left: 0;
   background-color: rgba(255, 255, 255, 0.5);
   display: none;
-  z-index: 2; /* Ensure the overlay is above the GIF */
+  z-index: 2; 
 }
 
 .nav-link input {
@@ -248,7 +235,7 @@ scale: 0.8
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
-  z-index: 3; /* Ensure the input is above the overlay */
+  z-index: 3; 
 }
 
 .nav-link:hover .overlay,
