@@ -339,3 +339,7 @@ scale: 0.8
   text-align: center;
   text-underline-offset: none;
 }
+
+h2 {
+  color: rgb(70, 74, 103);
+}
