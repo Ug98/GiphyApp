@@ -209,7 +209,7 @@ span.favorite:hover {
 }
 
 .nav-link img {
-  width: 200px; /* Adjust size as needed */
+  width: 150px; /* Adjust size as needed */
   height: auto;
   cursor: pointer;
   pointer-events: none;
@@ -342,4 +342,10 @@ scale: 0.8
 
 h2 {
   color: rgb(70, 74, 103);
+}
+
+h3{
+  font-size: xx-large;
+  margin-left: 100px;
+  color: wheat;
 }
