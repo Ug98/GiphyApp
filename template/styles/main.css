@@ -517,3 +517,71 @@ scale: 0.8
   height: 200px; 
 }
   
+#about {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center; 
+}
+
+.content h1, .content h2 {
+  text-align: center; 
+  margin-bottom: 20px;
+}
+
+.team-section, .timeline-section, .technologies-section, .contact-section {
+  margin-bottom: 30px;
+}
+
+.team-section h2, .timeline-section h2, .technologies-section h2, .contact-section h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.team-member {
+  display: inline-block; 
+  text-align: center;
+  margin: 0 15px 15px 15px; 
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  text-align: center; 
+}
+
+.timeline li {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.timeline li span {
+  width: 80px;
+  font-weight: bold;
+  margin-right: 10px; 
+}
+
+.technologies {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; 
+}
+
+.technologies li {
+  margin: 0 10px;
+}
+
+.contact-section a {
+  color: #3498db;
+  text-decoration: none;
+}
+
