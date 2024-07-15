@@ -49,7 +49,7 @@ export const toAboutView = () => `
     </div>
     <div class="contact-section">
       <h2>Contact Us</h2>
-      <p>If you have any questions or feedback, feel free to reach out to us at <a href="mailto:contact@yourapp.com">contact@yourapp.com</a>.</p>
+      <p>If you have any questions or feedback, feel free to reach out to us at <a href="mailto:trimaBratq@triSestri.com">trimaBratq@triSestri.com</a>.</p>
     </div>
   </div>
 </div>
