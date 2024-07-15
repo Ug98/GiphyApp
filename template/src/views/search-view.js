@@ -10,7 +10,7 @@ export const toSearchView = (gifs, searchTerm) => `
           <img src="${gif.images.downsized_medium.url}" alt="${gif.title}">
           <div class="overlay"></div>
           <div class="buttons">
-            <button class="view-trending-btn" data-trending-id="${gif.id}">View info</button>
+            <button class="view-trending-btn" data-trending-id="${gif.id}">Gif Info</button>
             <button class="${renderFavoriteStatus(gif.id) === FULL_HEART ? 'remove-from-favorites' : 'add-to-favorites'}" data-gif-id="${gif.id}">${renderFavoriteStatus(gif.id)}</button>
           </div>
         </div>
