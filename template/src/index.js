@@ -1,6 +1,6 @@
 import { TRENDING } from './common/constants.js';
 import { toggleFavoriteStatus } from './events/favorites-events.js';
-import { q } from './events/helpers.js';
+import { debounce, q } from './events/helpers.js';
 import { loadPage, renderTrending } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
 import { uploadFile } from './events/upload-events.js';
@@ -50,9 +50,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   // search events
-  q('input#search').addEventListener('input', e => {
-    renderSearchItems(e.target.value);
-  });
+
+  q('input#search').addEventListener('input', debounce(e => {
+    const searchTerm = e.target.value.trim();
+    if (searchTerm !== '') {
+      renderSearchItems(searchTerm);
+    } 
+  }, 1500));
 
   loadPage(TRENDING);
 });

@@ -23,3 +23,13 @@ export const renderFavoriteStatus = (gifId) => {
     ? FULL_HEART
     : EMPTY_HEART;
 };
+
+export const debounce = (func, delay) => {
+  let timeoutId;
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func(...args);
+    }, delay);
+  };
+};
