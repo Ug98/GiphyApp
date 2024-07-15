@@ -111,6 +111,12 @@ input#search {
   margin-top: -16px;
   text-align: center;
   align-items: center;
+  
+}
+
+::placeholder {
+  color: rgb(70, 74, 103);
+  font-weight:bolder;
 }
 
 span.favorite {
