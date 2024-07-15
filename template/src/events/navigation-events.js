@@ -11,11 +11,6 @@ import { CONTAINER_SELECTOR, HOME, TRENDING, FAVORITES, ABOUT, UPLOAD } from '..
 // public API
 export const loadPage = (page = '') => {
 
-    q('#trending-text').style.color = 'transparent';
-    q('#favorites-text').style.color = 'transparent';
-    q('#search-text').style.color = 'transparent';
-    q('#upload-text').style.color = 'transparent';
-    q('#about-text').style.color = 'transparent';
 
     switch (page) {
         case HOME:
@@ -51,14 +46,14 @@ export const renderFavorites = async () => {
     } else {
         q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(favoriteGifs);
     }
-    q('#favorites-text').style.color = 'rgba(70, 74, 103)';
+    // q('#favorites-text').style.color = 'rgba(70, 74, 103)';
 };
 
 export const renderTrending = async () => {
     loadTrending()
         .then(trendingGifs => q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGifs))
         .catch(error => console.error(error.message));
-    q('#trending-text').style.color = 'rgba(70, 74, 103)';
+    // q('#trending-text').style.color = 'rgba(70, 74, 103)';
 };
 
 // export const renderHome = () => {
@@ -69,10 +64,10 @@ export const renderTrending = async () => {
 
 export const renderAbout = async () => {
     q(CONTAINER_SELECTOR).innerHTML = toAboutView();
-    q('#about-text').style.color = 'rgba(70, 74, 103)';
+    // q('#about-text').style.color = 'rgba(70, 74, 103)';
 };
 
 export const renderUpload = async () => {
     q(CONTAINER_SELECTOR).innerHTML = toUploadView();
-    q('#upload-text').style.color = 'rgba(254, 55, 68)';
+    // q('#upload-text').style.color = 'rgba(254, 55, 68)';
  };
