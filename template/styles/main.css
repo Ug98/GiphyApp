@@ -276,10 +276,7 @@ span.favorite:hover {
   pointer-events: none;
   z-index: 1; /* Ensure the GIF is below the overlay */
 }
-.nav-link:hover .nav-text {
-  color: wheat;
-  transform: scale(1.1);
-}
+
 .nav-link:hover img {
   transform: scale(1.1);
 }
@@ -299,9 +296,7 @@ scale: 0.8
   text-align: center;
   
 }
-.nav-link:hover .nav-text {
-  transform: translateY(-3px);
-}
+
 
 .nav-link .overlay {
   position: absolute;
@@ -505,13 +500,7 @@ scale: 0.8
     border-radius: 20px;
 }
   
-.nav-text {
-  color: yellow;
-  display: block;
-  font-size: 15px;
-  margin-top: -20px;
-  font-style: Helvetica, sans-serif;
-}
+
   
 #loading {
   display: none; 
