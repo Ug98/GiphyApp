@@ -1,6 +1,14 @@
 import { renderFavoriteStatus } from "../events/helpers.js";
 import { FULL_HEART } from "../common/constants.js";
 
+
+/**
+ * Generates HTML for the search view with GIFs.
+ * 
+ * @param {{ data: Array<{ id: string, images: { downsized_medium: { url: string } }, title: string }> }} gifs - The GIF data.
+ * @param {string} searchTerm - The search term.
+ * @returns {string} The HTML string for the search view.
+ */
 export const toSearchView = (gifs, searchTerm) => `
   <h2>Search results for "${searchTerm}":</h2>
   <div class="trending">

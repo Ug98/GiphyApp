@@ -1,10 +1,21 @@
 import { API_KEY } from "../common/constants.js";
 
+/**
+ * Loads trending GIFs from the Giphy API.
+ * 
+ * @returns {Promise<{ data: Array<{ id: string, images: { downsized_medium: { url: string } }, title: string }> }>} A promise that resolves to the GIF data.
+ */
 export const loadTrending = async () => {
   return await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=25&rating=g`)
     .then(response => response.json());
 };
 
+/**
+ * Loads a single GIF by ID from the Giphy API.
+ * 
+ * @param {string} id - The ID of the GIF.
+ * @returns {Promise<{ id: string, images: { original: { url: string } }, title: string, import_datetime: string, username: string } | null>} A promise that resolves to the GIF data, or null if an error occurs.
+ */
 export const loadSingleGif = async (id) => {
   try {
     const response = await fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=${API_KEY}`);
@@ -16,7 +27,12 @@ export const loadSingleGif = async (id) => {
   }
 };
 
-
+/**
+ * Searches for GIFs by a search term using the Giphy API.
+ * 
+ * @param {string} [searchTerm=''] - The search term.
+ * @returns {Promise<{ data: Array<{ id: string, images: { downsized_medium: { url: string } }, title: string }> }>} A promise that resolves to the search results.
+ */
 export const searchGifs = async (searchTerm = '') => {
   return await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${searchTerm}&limit=25&offset=0&rating=g&lang=en`)
       .then(response => response.json());

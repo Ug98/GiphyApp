@@ -16,7 +16,14 @@ document.addEventListener('DOMContentLoaded', async () => {
       loadPage(e.target.getAttribute('data-page'));
     }
 
-    // show GIF details
+    /**
+ * Handles the click event on a trending button, loads the single GIF data,
+ * creates an overlay with the GIF details, and appends it to the document body.
+ * Adds an event listener to the close button to remove the overlay.
+ * 
+ * @param {Event} e - The event object.
+ * @returns {Promise<void>} A promise that resolves when the overlay is created and the event listener is added.
+ */
     if (e.target.classList.contains('view-trending-btn')) {
       const gifId = e.target.getAttribute('data-trending-id');
       const gif = await loadSingleGif(gifId);
@@ -49,8 +56,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
-  // search events
-
+ 
+  /**
+ * Handles the input event for the search input field.
+ * Debounces the input event and calls the renderSearchItems function with the trimmed search term if it's not empty.
+ * 
+ * @param {Event} e - The input event object.
+ */
   q('input#search').addEventListener('input', debounce(e => {
     const searchTerm = e.target.value.trim();
     if (searchTerm !== '') {

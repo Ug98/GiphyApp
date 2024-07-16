@@ -24,6 +24,13 @@ export const renderFavoriteStatus = (gifId) => {
     : EMPTY_HEART;
 };
 
+/**
+ * Debounces a function, delaying its execution until after a specified wait time has elapsed since the last time it was invoked.
+ * 
+ * @param {Function} func - The function to debounce.
+ * @param {number} wait - The number of milliseconds to delay.
+ * @returns {Function} A new debounced function.
+ */
 export const debounce = (func, delay) => {
   let timeoutId;
   return (...args) => {

@@ -1,6 +1,12 @@
 import { renderFavoriteStatus } from "../events/helpers.js";
 import { FULL_HEART } from "../common/constants.js";
 
+/**
+ * Generates HTML for the trending view with GIFs.
+ * 
+ * @param {{ data: Array<{ id: string, images: { downsized_medium: { url: string } }, title: string }> }} gifs - The GIF data.
+ * @returns {string} The HTML string for the trending view.
+ */
 export const toTrendingView = (gifs) => `
   <h1></h1>
   <div class="trending">
