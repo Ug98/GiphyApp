@@ -1,21 +1,17 @@
-import { loadTrending, loadSingleGif, loadRandomGifs } from '../requests/request-service.js';
+import { loadTrending,  loadRandomGifs } from '../requests/request-service.js';
 import { toTrendingView } from '../views/trending-view.js';
 import { toUploadView } from '../views/upload-view.js';
 import { toFavoritesView, toRandomGifsView } from '../views/favorites-view.js';
 import { toAboutView } from '../views/about-view.js';
-import { toHomeView } from '../views/home-view.js';
 import { q, setActiveNav } from './helpers.js';
 import { getFavorites } from '../data/favorites.js';
-import { CONTAINER_SELECTOR, HOME, TRENDING, FAVORITES, ABOUT, UPLOAD } from '../common/constants.js';
+import { CONTAINER_SELECTOR, TRENDING, FAVORITES, ABOUT, UPLOAD } from '../common/constants.js';
 
 // public API
 export const loadPage = (page = '') => {
 
 
     switch (page) {
-        case HOME:
-            setActiveNav(HOME);
-            return renderHome();
 
         case TRENDING:
             setActiveNav(TRENDING);

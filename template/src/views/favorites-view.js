@@ -1,4 +1,4 @@
-import { FULL_HEART, EMPTY_HEART } from "../common/constants.js";
+import { FULL_HEART } from "../common/constants.js";
 import { renderFavoriteStatus } from "../events/helpers.js";
 /**
  * Generates the HTML for displaying the favorite GIFs.

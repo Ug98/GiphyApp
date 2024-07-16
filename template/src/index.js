@@ -1,10 +1,9 @@
 import { TRENDING } from './common/constants.js';
 import { toggleFavoriteStatus } from './events/favorites-events.js';
 import { debounce, q } from './events/helpers.js';
-import { loadPage, renderTrending } from './events/navigation-events.js';
+import { loadPage } from './events/navigation-events.js';
 import { renderSearchItems } from './events/search-events.js';
 import { uploadFile } from './events/upload-events.js';
-import { renderFavoriteStatus } from './events/helpers.js';
 import { loadSingleGif } from './requests/request-service.js';
 import { toGifDetailedView } from './views/gif-views.js';
 
