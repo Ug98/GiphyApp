@@ -9,8 +9,7 @@ import { getUploads } from "../data/uploads.js";
 export const toUploadView = () => `
 <div id="uploads">
   <div id="upload">
-    <p>Upload</p>
-    <input type="file" id="upload-gif" accept="image/*">
+    <input type="file" id="upload-gif" accept="image/gif">
     <button id="upload-button">Upload GIF</button>
   </div>
   <div id="uploaded">
