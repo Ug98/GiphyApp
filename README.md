@@ -23,6 +23,7 @@ The 'template' folder holds all files of the project. To run the app after insta
 
 ### 4. Web app project structure
 
+- `out` - contains the JSDoc documentation.
 - `styles` - contains the CSS files included in the app
 - `src` - where the app's JavaScript code lives, inside you can find
   - `common/constants.js` - `common` holds resources used by other files, such resources are the constants in `constants.js`.
