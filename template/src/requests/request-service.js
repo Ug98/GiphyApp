@@ -38,6 +38,13 @@ export const searchGifs = async (searchTerm = '') => {
       .then(response => response.json());
 };
 
+/**
+ * Handles uploading a GIF to the API Key owner's account on Giphy. Fetches the upload API
+ * and attributes the FormData Object of the selected file to the requests body. 
+ * 
+ * @param {*} formData The FormData object created with the upload of the file.
+ * @returns The JSON-parsed response object resulting from the fetch(uplad API) function
+ */
 export const uploadGif = async (formData) => {
   // try {
   return await fetch('https://upload.giphy.com/v1/gifs', {

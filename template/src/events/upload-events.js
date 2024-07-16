@@ -3,7 +3,11 @@ import { API_KEY } from '../common/constants.js';
 import { q } from './helpers.js';
 import { addUpload, getUploads } from '../data/uploads.js'; 
 
-// Функция за качване на GIF
+/**
+ * Creates a FormData object from the selected file for upload.
+ * Uploads it to the API Key owner's account and handles the result accordingly.
+ * If successful adds the image to the gallery of uploaded GIFs and shows it.
+ */
 export const uploadFile = async () => {
   const fileInput = q('#upload-gif');
   const formData = new FormData();
@@ -19,8 +23,8 @@ export const uploadFile = async () => {
     if (data.meta.status === 200) {
       alert('GIF uploaded successfully!');
       const uploadedGifId = data.data.id;
-      addUpload(uploadedGifId); // Добавяме новия GIF ID към съхранение на качени GIF-ове
-      displayUploadedGifs(); // Актуализираме изгледа с качените GIF-ове
+      addUpload(uploadedGifId);
+      displayUploadedGifs();
     } else {
       alert('Failed to upload GIF. Status: ' + data.meta.status);
     }
@@ -32,14 +36,16 @@ export const uploadFile = async () => {
   }
 };
 
-// Функция за показване на качените GIF-ове
+/**
+ * Shows the gallery of uploaded GIFs or a message when it's empty. 
+ */
 const displayUploadedGifs = () => {
   const uploadedDiv = q('#uploaded');
-  uploadedDiv.innerHTML = ''; // Изчистваме текущото съдържание на #uploaded
+  uploadedDiv.innerHTML = '';
 
   const uploads = getUploads();
   if (uploads.length > 0) {
-    uploadedDiv.innerHTML += '<p>Uploaded</p>'; // Добавяме заглавие "Uploaded"
+    uploadedDiv.innerHTML += '<p>Uploaded</p>';
     uploads.forEach(gifId => {
       const imgElement = document.createElement('img');
       imgElement.src = `https://media.giphy.com/media/${gifId}/giphy.gif`;
@@ -49,6 +55,6 @@ const displayUploadedGifs = () => {
       uploadedDiv.appendChild(imgElement);
     });
   } else {
-    uploadedDiv.innerHTML += '<p>No GIFs uploaded yet</p>'; // Алтернативно съобщение, ако няма качени GIF-ове
+    uploadedDiv.innerHTML += '<p>No GIFs uploaded yet</p>';
   }
 };

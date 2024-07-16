@@ -50,7 +50,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     }
 
-    // upload events
+    /**
+     * Handles the click event on the Upload button and calls the UploadFile() function.
+     */
     if (e.target.id === 'upload-button') {
       uploadFile();
     }

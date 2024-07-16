@@ -67,6 +67,10 @@ export const renderAbout = async () => {
     // q('#about-text').style.color = 'rgba(70, 74, 103)';
 };
 
+/**
+ * Handles rendering the Upload page by inserting the HTML returned
+ * by the toUploadView() function, inside the inner HTML of the container.
+ */
 export const renderUpload = async () => {
     q(CONTAINER_SELECTOR).innerHTML = toUploadView();
     // q('#upload-text').style.color = 'rgba(254, 55, 68)';
