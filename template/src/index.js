@@ -40,7 +40,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     }
 
-    // toggle favorite event
+    /**
+ * Event listener for toggling the favorite status of a GIF.
+ * Listens for clicks on buttons with the class 'add-to-favorites' or 'remove-from-favorites'.
+ *
+ */
     if (e.target.classList.contains('add-to-favorites') || e.target.classList.contains('remove-from-favorites')) {
       const gifId = e.target.getAttribute('data-gif-id');
       if (gifId) {
@@ -56,7 +60,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
- 
+
   /**
  * Handles the input event for the search input field.
  * Debounces the input event and calls the renderSearchItems function with the trimmed search term if it's not empty.
@@ -67,7 +71,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const searchTerm = e.target.value.trim();
     if (searchTerm !== '') {
       renderSearchItems(searchTerm);
-    } 
+    }
   }, 1500));
 
   loadPage(TRENDING);
