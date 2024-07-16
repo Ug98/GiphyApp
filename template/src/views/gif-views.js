@@ -10,6 +10,7 @@ export const toGifDetailedView = (gif) => `
     <h2>${gif.title}</h2>
     <img src='${gif.images.original.url}' alt='${gif.title}'>
     <p>Upload date: ${gif.import_datetime}</p>
+    <p>GIF URL: <a href="${gif.url}"> ${gif.url} </a></p>
     <p>Uploaded by: ${gif.username || 'N/A'}</p>
     <button id="close-gif-info">Close</button>
   </div>
