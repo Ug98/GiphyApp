@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "lint": "eslint .",
-    "start": "live-server ."
+    "start": "live-server .",
+    "doc": "jsdoc ."
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "globals": "^15.8.0"
   },
   "dependencies": {
+    "jsdoc": "^4.0.3",
     "live-server": "^1.2.2"
   }
 }
