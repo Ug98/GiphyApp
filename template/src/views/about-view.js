@@ -25,16 +25,20 @@ export const toAboutView = () => `
           <p>Project Inception</p>
         </li>
         <li>
-          <span>14/07-15/07</span>
-          <p>Design Phase</p>
-        </li>
-        <li>
           <span>12/07-14/07</span>
           <p>Development Phase</p>
         </li>
         <li>
+          <span>14/07-15/07</span>
+          <p>Design Phase</p>
+        </li>
+        <li>
           <span>15/07-16/07</span>
           <p>Testing and Deployment</p>
+        </li>
+         <li>
+          <span>16/07 - </span>
+          <p>Open positions for three sisters...</p>
         </li>
       </ul>
     </div>

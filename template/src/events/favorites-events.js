@@ -2,6 +2,12 @@ import { addFavorite, getFavorites, removeFavorite } from '../data/favorites.js'
 import { loadSingleGif } from '../requests/request-service.js';
 import { renderFavorites } from './navigation-events.js';
 import { FULL_HEART, EMPTY_HEART } from '../common/constants.js';
+/**
+ * Toggles the favorite status of a GIF.
+ *
+ * @param {string} gifId - The ID of the GIF to toggle.
+ * @returns {Promise<void>}
+ */
 
 export const toggleFavoriteStatus = async (gifId) => {
   if (!gifId) {
